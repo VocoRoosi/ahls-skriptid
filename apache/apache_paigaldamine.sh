@@ -7,6 +7,7 @@ APACHE2=$(dpkg-query -W -f='${Status}' apache2 2>/dev/null | grep -c 'ok install
 if [ $APACHE2 -eq 1 ]; then
     echo "Apache2 teenus on juba paigaldatud."
     echo "Kontrollime Apache2 teenuse staatust:"
+    #Kasutan --no-pager kuna see saadab terve väljundi ilma ,et peaksin kerima
     systemctl status apache2 --no-pager
 
 else
