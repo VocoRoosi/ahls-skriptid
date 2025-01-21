@@ -3,7 +3,7 @@ MYSQL=$(dpkg-query -W -f='${Status}' mysql-server 2>/dev/null | grep -c 'ok inst
 
 if [ $MYSQL -eq 1 ]; then
     echo "MySQL teenus on juba paigaldatud."
-    echo "Kontrollime MySQL teenuse staatust:"
+    echo "Kontrollime MySQL olemasolu:"
     mysql
 
 else
